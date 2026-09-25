@@ -1,4 +1,4 @@
-from Quiz import trivia_fetch
+from QuizAPI import trivia_fetch
 
 # Test 1
 def test_trivia_42():
