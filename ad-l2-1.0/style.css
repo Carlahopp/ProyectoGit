@@ -1,0 +1,115 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+body {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+h1, h2, p, h3{
+  text-align: center;
+}
+li{ 
+  text-align: center; 
+}
+ul {
+  width: fit-content;
+  margin: 0 auto;
+}
+img {
+  display: block;
+  margin: 20px auto;
+  max-width: 300px;
+}
+button {
+  display: block;
+  margin: 30px auto;
+}
+  .popup-overlay {
+  display: none; /* Se mantiene oculto hasta que haces clic */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); 
+  backdrop-filter: blur(3px); 
+  z-index: 9999;
+}
+
+/* Caja de pop-up */
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 16px; 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  max-width: 320px;
+  width: 80%;
+  animation: popIn 0.3s ease-out; /* Animación de entrada */
+}
+
+/* Icono grande animado */
+.popup-icon {
+  font-size: 50px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Título llamativo dentro del aviso */
+.popup-content h2 {
+  color: #d32f2f; /* Rojo hamburguesería vibrante */
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: default;
+}
+
+.popup-content p {
+  color: #555555;
+  margin: 0 0 20px 0;
+  font-size: 15px;
+}
+
+/* Botón de cierre estilizado */
+.popup-close-btn {
+  background-color: #ffb300;
+  color: #000000;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  width: 100%;
+}
+
+/* Efectos interactivos para el botón */
+.popup-close-btn:hover {
+  background-color: #ffa000;
+}
+
+.popup-close-btn:active {
+  transform: scale(0.98);
+}
+
+/* Animación sutil de escala para la apertura */
+@keyframes popIn {
+  0% { transform: translate(-50%, -50%) scale(0.7); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+.titulo-burger-town {
+  cursor: pointer;         
+  transition: color 0.3s; 
+}
+
+.titulo-burger-town:hover {
+  opacity: 0.8;           
+}
