@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CDN Oficial de Bootstrap 5.3.1 de tu entorno -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <!-- Archivo CSS compartido -->
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <title>TechStore - Vitrina de Productos</title>
+</head>
+<body>
+
+  <!-- Tarea 5: Barra de Navegación superior optimizada -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand font-monospace" href="#">⚡ TechStore Pro</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <!-- Tarea 5.4: Hipervínculo explícito de regreso a inicio.html -->
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Nuestros productos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Encabezado de la Sección de Productos -->
+  <header class="container mt-5 text-start">
+    <div class="p-4 mb-4 bg-white rounded-3 shadow-sm border border-light">
+      <h1 class="display-6 fw-bold text-dark m-0">Catálogo de Equipos</h1>
+      <p class="text-muted lead fs-6 mt-1 mb-0">Explora nuestra línea premium de estaciones de trabajo, periféricos y componentes de alto rendimiento seleccionados para desarrollo profesional.</p>
+    </div>
+  </header>
+
+  <!-- Sección de Vitrina de Productos: Espacio para 10 imágenes -->
+  <main class="container mb-5">
+    <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 text-start">
+      
+      <!-- Producto 1: Computadora de Escritorio / Servidor -->
+      <div class="col">
+        <div class="card h-100 product-card border-light shadow-xs">
+          <img src="Estación.jpj.jpg" class="card-img-top object-fit-cover" alt="Estación de Trabajo de Cómputo" style="height: 160px;">
+          <div class="card-body p-3">
+            <span class="badge bg-primary mb-1">Equipos</span>
+            <h6 class="card-title fw-bold text-truncate mb-1">Estación Pro Java</h6>
+            <p class="card-text text-muted small m-0">Procesador de 16 núcleos ideal para entornos empresariales robustos.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 2: Laptop de Alto Rendimiento -->
+      <div class="col">
+        <div class="card h-100 product-card border-light shadow-xs">
+          <img src="Laptop.jpg" class="card-img-top object-fit-cover" alt="Laptop Corporativa" style="height: 160px;">
+          <div class="card-body p-3">
+            <span class="badge bg-primary mb-1">Equipos</span>
+            <h6 class="card-title fw-bold text-truncate mb-1">Laptop DevBook 16"</h6>
+            <p class="card-text text-muted small m-0">Pantalla Liquid Retina, optimizada para virtualización y Docker.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 3: Monitor de Alta Resolución -->
+      <div class="col">
+        <div class="card h-100 product-card border-light shadow-xs">
+          <img src="Monitor.jpg" class="card-img-top object-fit-cover" alt="Monitor UltraWide" style="height: 160px;">
+          <div class="card-body p-3">
+            <span class="badge bg-secondary mb-1">Periféricos</span>
+            <h6 class="card-title fw-bold text-truncate mb-1">Monitor 4K 32"</h6>
+            <p class="card-text text-muted small m-0">Espacio de trabajo UltraWide para paneles y código en paralelo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 4: Teclado Mecánico Ergonómico -->
+      <div class="col">
+        <div class="card h-100 product-card border-light shadow-xs">
+          <img src="teclado.jpg" class="card-img-top object-fit-cover" alt="Teclado Mecánico" style="height: 160px;">
+          <div class="card-body p-3">
+            <span class="badge bg-secondary mb-1">Periféricos</span>
+            <h6 class="card-title fw-bold text-truncate mb-1">Teclado Mecánico RGB</h6>
+            <p class="card-text text-muted small m-0">Interruptores táctiles silenciosos diseñados para largas sesiones de desarrollo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 5: Mouse de Precisión -->
+      <div class="col">
+        <div class="card h-100 product-card border-light shadow-xs">
+          <img src="mouse.jpg" class="card-img-top object-fit-cover" alt="Mouse Ergonómico" style="height: 160px;">
+          <div class="card-body p-3">
+            <span class="badge bg-secondary mb-1">Periféricos</span>
+            <h6 class="card-title fw-bold text-truncate mb-1">Mouse Ergonómico Pro</h6>
+            <p class="card-text text-muted small m-0">Sensor de alta precisión con soporte lateral para cuidar la muñeca.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 6: Auriculares de Estudio Aislantes -->
+      <div class="col">
+        <div class="card h-100 product-card border-light shadow-xs">
+          <img src="audifonos.jpg" class="card-img-top object-fit-cover" alt="Auriculares Cancelación Ruido" style="height: 160px;">
+          <div class="card-body p-3">
+            <span class="badge bg-secondary mb-1">Periféricos</span>
+            <h6 class="card-title fw-bold text-truncate mb-1">Audífonos ANC Pro</h6>
+            <p class="card-text text-muted small m-0">Cancelación activa de ruido ambiental para un enfoque total.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 7: Unidad de Almacenamiento SSD Externa -->
+      <div class="col">
+        <div class="card h-100 product-card border-light shadow-xs">
+          <img src="ssd.jpg" class="card-img-top object-fit-cover" alt="SSD Portátil Extremo" style="height: 160px;">
+          <div class="card-body p-3">
+            <span class="badge bg-info text-dark mb-1">Componentes</span>
+            <h6 class="card-title fw-bold text-truncate mb-1">SSD NVMe Portátil 2TB</h6>
+            <p class="card-text text-muted small m-0">Altas velocidades de transferencia para respaldos locales de bases de datos.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 8: Tarjeta Gráfica Dedicada -->
+      <div class="col">
+        <div class="card h-100 product-card border-light shadow-xs">
+          <img src="GPU.jpg" class="card-img-top object-fit-cover" alt="GPU de procesamiento gráfico" style="height: 160px;">
+          <div class="card-body p-3">
+            <span class="badge bg-info text-dark mb-1">Componentes</span>
+            <h6 class="card-title fw-bold text-truncate mb-1">GPU Compute Core X</h6>
+            <p class="card-text text-muted small m-0">Aceleración por hardware para modelado de datos y renders complejos.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 9: Memoria RAM de Alta Velocidad -->
+      <div class="col">
+        <div class="card h-100 product-card border-light shadow-xs">
+          <img src="RAM.jpg" class="card-img-top object-fit-cover" alt="Módulo de memoria RAM" style="height: 160px;">
+          <div class="card-body p-3">
+            <span class="badge bg-info text-dark mb-1">Componentes</span>
+            <h6 class="card-title fw-bold text-truncate mb-1">RAM DDR5 64GB Pack</h6>
+            <p class="card-text text-muted small m-0">Kit dual optimizado para multitarea intensa en servidores locales.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 10: Cámara Web Ultra HD -->
+      <div class="col">
+        <div class="card h-100 product-card border-light shadow-xs">
+          <img src="Webcam.jpg" class="card-img-top object-fit-cover" alt="Cámara Web Conferencias" style="height: 160px;">
+          <div class="card-body p-3">
+            <span class="badge bg-secondary mb-1">Periféricos</span>
+            <h6 class="card-title fw-bold text-truncate mb-1">Webcam 4K Ultra Stream</h6>
+            <p class="card-text text-muted small m-0">Micrófono estéreo integrado, ideal para revisiones de código y llamadas de diseño.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Botón complementario Pro de regreso en la parte inferior -->
+    <div class="mt-5 text-start">
+      <a class="btn btn-outline-secondary btn-md px-4" href="index.html" role="button">← Volver al Inventario Central</a>
+    </div>
+  </main>
+
+  <!-- Tarea 3.6: Última fila - Pie de página estructural -->
+  <footer class="py-4 mt-auto text-center border-top">
+    <div class="container">
+      <span class="text-muted small">Contacto: carlahopp94@gmail.com</span>
+    </div>
+  </footer>
+
+  <!-- Scripts oficiales -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+</html>

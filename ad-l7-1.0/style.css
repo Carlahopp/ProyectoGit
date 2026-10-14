@@ -1,0 +1,200 @@
+@charset "UTF-8";
+html {
+    height: 100%;
+    width: 100%;
+}
+/* ==========================================================================
+   ESTILOS GLOBALES (Compartidos por index.html e index2.html)
+   ========================================================================== */
+
+body {
+    background-color: #f3f4f6 !important; /* Fondo gris claro moderno */
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #1f2937;
+}
+
+/* 1. Barra de Navegación Premium */
+.navbar {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important; /* Fondo oscuro sólido */
+    border-bottom: 3px solid #3b82f6 !important; /* Acento Azul Eléctrico */
+    padding: 0.7rem 1rem !important;
+}
+
+.navbar-brand {
+    font-weight: 700 !important;
+    color: #ffffff !important; /* Blanco puro para el logo */
+    text-decoration: none !important;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.75) !important; /* Gris claro/blanco para enlaces inactivos */
+    text-decoration: none !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #38bdf8 !important; /* Cyan brillante al pasar el cursor */
+}
+
+.navbar-nav .nav-link.active {
+    color: #ffffff !important; /* Blanco brillante para la página donde estás parado */
+    font-weight: 600;
+}
+
+/* Efectos Premium adicionales para las nuevas tarjetas de productos */
+.product-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: 12px !important;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 2. Botones de Estilo de Producción */
+.btn-primary {
+    background-color: #4f46e5 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+.btn-primary:hover {
+    background-color: #4338ca !important;
+    transform: scale(1.02);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600;
+}
+.btn-success:hover {
+    filter: brightness(1.05);
+}
+
+.btn-outline-secondary {
+    color: #4f46e5 !important;
+    border: 2px solid #6366f1 !important;
+    border-radius: 10px !important;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+.btn-outline-secondary:hover {
+    background-color: #4f46e5 !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 15px rgba(79, 70, 229, 0.2);
+    transform: translateY(-2px);
+}
+
+/* 3. Pie de Página unificado */
+footer {
+    background-color: #0f172a !important; /* Pizarra oscuro profundo */
+    padding: 1.5rem 0 !important;
+}
+footer .text-muted {
+    color: #94a3b8 !important;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA INDEX.HTML (Página de Inicio)
+   ========================================================================== */
+
+/* Contenedor de la Rejilla principal */
+.grid-preview {
+    background: #ffffff !important;
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 2.5rem !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Columnas internas de la Rejilla */
+.col-custom {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    padding: 1.25rem !important;
+    font-weight: 600;
+    color: #64748b;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.col-custom:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -8px rgba(59, 130, 246, 0.15);
+}
+
+/* Resalte específico para la columna central de 8 unidades */
+.col-8 .col-custom {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important;
+    border: 1.5px solid #3b82f6 !important;
+    color: #1d4ed8 !important;
+}
+
+/* Componentes del Formulario */
+.card {
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+}
+.form-label {
+    font-weight: 600;
+    color: #475569;
+}
+.form-control {
+    border: 1.5px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+}
+.form-control:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15) !important;
+}
+
+/* Alertas Dinámicas */
+.alert-warning {
+    background-color: #fffbeb !important;
+    border-left: 5px solid #f59e0b !important;
+    color: #b45309 !important;
+    border-radius: 8px;
+}
+
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA INDEX2.HTML (Página de Destino)
+   ========================================================================== */
+
+/* Tarjeta contenedora de "Great Job!" */
+.custom-destination-card {
+    background: #ffffff !important;
+    border: none !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease;
+}
+.custom-destination-card:hover {
+    transform: scale(1.01);
+}
+
+/* Efecto de degradado de color en el título de la página 2 */
+.custom-destination-card h1 {
+    background: linear-gradient(135deg, #4f46e5 0%, #1d4ed8 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800 !important;
+}
+hr {
+    border-top: 2px solid #e2e8f0 !important;
+    opacity: 0.7;
+}
