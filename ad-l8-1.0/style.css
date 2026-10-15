@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   REFACTORIZACIÓN DEL BLOG (AD-14) Versión final
+   ========================================================================== */
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+body {
+    background-color: #f8fafc !important;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. BARRA DE NAVEGACIÓN */
+.navbar {
+    background: linear-gradient(135deg, #1e1b4b 0%, #2e2a72 100%) !important;
+    border-bottom: 3px solid #3b82f6 !important;
+    padding: 0.8rem 1rem !important;
+}
+.navbar-brand {
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    letter-spacing: 0.5px;
+}
+
+/* CORRECCIÓN: centrar el menú como en tu wireframe */
+.navbar .container{
+    display: flex;
+    justify-content: center !important;
+}
+
+.navbar-collapse{
+    justify-content: center !important;
+    flex-grow: 0 !important;
+}
+
+.navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center;
+    gap: 8px;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75) !important;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #38bdf8 !important;
+}
+
+/* Activo en rojo como en tu wireframe */
+.navbar-nav .nav-link.active {
+    color: #ff4444 !important;
+    font-weight: 700;
+}
+
+/* 3. BLOQUES AD y News - en horizontal */
+.aside-placeholder {
+    background-color: #f1f5f9;
+    border: 2px dashed #cbd5e1;
+    border-radius: 14px;
+    color: #94a3b8;
+    font-weight: 700;
+    font-size: 1.2rem;
+    min-height: 450px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+.aside-placeholder:hover {
+    background-color: #e2e8f0;
+    color: #64748b;
+}
+
+/* 4. TARJETAS CONTENT */
+.blog-card {
+    background: #ffffff;
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 5. FOOTER */
+footer {
+    background-color: #0f172a !important;
+    padding: 1.5rem 0 !important;
+    margin-top: auto;
+}
+footer .text-muted {
+    color: #94a3b8 !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px){
+    .navbar-nav{
+        flex-direction: column !important;
+        align-items: flex-start;
+    }
+    .navbar .container{
+        justify-content: space-between !important;
+    }
+    .aside-placeholder{
+        min-height: 80px;
+    }
+}
