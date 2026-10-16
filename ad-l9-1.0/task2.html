@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task 2 - Formulario Real</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body { background: #f5f7fa; min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: 'Segoe UI', sans-serif; }
+  .form-card { background: white; border-radius: 20px; padding: 35px; width: 100%; max-width: 500px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+  #resultado { background: #1e1e2f; color: #34c759; font-family: 'Courier New', monospace; padding: 15px; border-radius: 12px; margin-top: 20px; display: none; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+  <div class="form-card">
+    <h3 class="fw-bold text-center mb-1">👤 Registro Developer</h3>
+    <p class="text-muted text-center small mb-4">Task 2: Captura y procesamiento de datos</p>
+
+    <form id="form-registro">
+      <div class="row g-3">
+        <div class="col-6">
+          <label class="form-label fw-bold">Nombre:</label>
+          <input type="text" id="nombre" class="form-control" placeholder="Fernando" required>
+        </div>
+        <div class="col-6">
+          <label class="form-label fw-bold">Apellido:</label>
+          <input type="text" id="apellido" class="form-control" placeholder="Colunga" required>
+        </div>
+        <div class="col-12">
+          <label class="form-label fw-bold">Email:</label>
+          <input type="email" id="email" class="form-control" placeholder="fernando@gmail.com" required>
+        </div>
+        <div class="col-6">
+          <label class="form-label fw-bold">Lenguaje Favorito:</label>
+          <select id="lenguaje" class="form-select">
+            <option>Java</option>
+            <option>JavaScript</option>
+            <option>Python</option>
+          </select>
+        </div>
+        <div class="col-6">
+          <label class="form-label fw-bold">Nivel:</label>
+          <select id="nivel" class="form-select">
+            <option>Junior</option>
+            <option>Mid</option>
+            <option>Senior</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success w-100 mt-4 fw-bold py-2" style="background:#34c759; border:none; border-radius:12px;">Enviar</button>
+    </form>
+
+    <!-- Aquí se imprime lo que escribes -->
+    <div id="resultado"></div>
+  </div>
+
+<script>
+  const form = document.getElementById("form-registro");
+  const divResultado = document.getElementById("resultado");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // evita que se recargue la página
+
+    const datos = {
+      nombre: document.getElementById("nombre").value,
+      apellido: document.getElementById("apellido").value,
+      email: document.getElementById("email").value,
+      lenguaje: document.getElementById("lenguaje").value,
+      nivel: document.getElementById("nivel").value
+    };
+
+    // 1. Impresión limpia en CONSOLA (como pide la rúbrica)
+    console.clear();
+    console.log("--- Valores del Formulario Task 2 ---");
+    console.log(`Nombre: ${datos.nombre}`);
+    console.log(`Apellido: ${datos.apellido}`);
+    console.log(`Email: ${datos.email}`);
+    console.log(`Lenguaje: ${datos.lenguaje}`);
+    console.log(`Nivel: ${datos.nivel}`);
+    console.table(datos);
+
+    // 2. Impresión en PÁGINA (para que se vea pro)
+    divResultado.style.display = "block";
+    divResultado.textContent = `> Datos capturados correctamente...\n> Nombre: ${datos.nombre} ${datos.apellido}\n> Email: ${datos.email}\n> Stack: ${datos.lenguaje} - ${datos.nivel}\n> Listo para compilar!`;
+  });
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

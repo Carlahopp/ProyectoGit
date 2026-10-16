@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Task 4 - Feed Pro</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body { background: #f5f7fa; font-family: 'Segoe UI', sans-serif; padding: 20px; display:flex; justify-content:center; }
+  .feed-card { background:white; border-radius:20px; padding:30px; width:100%; max-width:550px; box-shadow:0 15px 40px rgba(0,0,0,0.08); }
+  ul, ol { padding-left: 0; }
+  #lista-comentarios-ul li { list-style:none; background:#fff; border:1px solid #eee; padding:12px 15px; border-radius:12px; margin-bottom:8px; }
+  #lista-comentarios-ul li.nuevo { background:#e8f5e9; border-left:4px solid #34c759; }
+</style>
+</head>
+<body>
+
+<!-- LÍNEA 1: Botón Dashboard (arriba de todo, línea 15) -->
+<a href="index.html" style="position:fixed;top:15px;left:15px;z-index:100;background:#1e1e2f;color:white;padding:8px 16px;border-radius:30px;text-decoration:none;font-weight:600;font-size:13px;">← Dashboard</a>
+
+<div class="feed-card">
+  <h4 class="fw-bold text-center">💬 Feed de Comentarios</h4>
+  <p class="text-muted text-center small mb-3">Ahora tú escribes el comentario</p>
+
+  <!-- LÍNEA 2: AQUÍ VA TU INPUT (reemplaza el botón viejo de "cuatro") - línea 23 -->
+  <div class="mb-3">
+    <div style="display:flex; gap:8px;">
+      <input id="input-comentario" type="text" placeholder="Escribe tu comentario aquí..." class="form-control" style="border-radius:12px; padding:12px 15px;">
+      <button id="btn-publicar" class="btn fw-bold" style="background:#ff9500; color:white; border-radius:12px; padding:12px 20px;">Publicar 🚀</button>
+    </div>
+  </div>
+  <!-- FIN INPUT -->
+
+  <div style="background:#f8f9fa; border-radius:15px; padding:15px;">
+    <p class="small fw-bold text-muted">COMENTARIOS ACTIVOS (UL):</p>
+    <ul id="lista-comentarios-ul">
+      <li>¡Me encanta cómo está quedando el diseño!</li>
+      <li>Es funcional está maquetación de código</li>
+      <li>Implementando el feed dinámico con appendChild</li>
+    </ul>
+
+    <p class="small fw-bold text-muted mt-3">MAPEO TÉCNICO (OL):</p>
+    <ol id="lista-mapeo-ol" style="padding-left:20px;">
+      <li>primer comentario</li>
+      <li>segundo comentario</li>
+      <li>tercer comentario</li>
+    </ol>
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById("btn-publicar");
+  const input = document.getElementById("input-comentario");
+  const listaUL = document.getElementById("lista-comentarios-ul");
+  const listaOL = document.getElementById("lista-mapeo-ol");
+  let contador = 4;
+
+  function publicarComentario() {
+    const texto = input.value.trim();
+    if(texto === "") { input.style.borderColor = "red"; return; }
+    input.style.borderColor = "#eee";
+
+    const li = document.createElement("li");
+    li.className = "nuevo";
+    li.innerHTML = `<b>Tú:</b> ${texto}`;
+    listaUL.appendChild(li);
+
+    const liOl = document.createElement("li");
+    liOl.textContent = texto.substring(0, 25);
+    liOl.style.color = "#5856d6"; liOl.style.fontWeight = "bold";
+    listaOL.appendChild(liOl);
+
+    input.value = ""; input.focus(); contador++;
+  }
+
+  btn.addEventListener("click", publicarComentario);
+  input.addEventListener("keypress", (e) => { if(e.key === "Enter") publicarComentario(); });
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

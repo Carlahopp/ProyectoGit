@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Task 3: Auditoría de Enlaces</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body { background: #f5f7fa; min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: 'Segoe UI', sans-serif; padding: 20px; }
+  .audit-card { background: white; border-radius: 20px; padding: 35px; width: 100%; max-width: 600px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+  .link-chip { background: #eef2ff; color: #5856d6; padding: 8px 14px; border-radius: 20px; font-weight: 600; text-decoration: none; display: inline-block; margin: 4px; font-size: 14px; }
+  .link-chip.inline { background: transparent; color: #007aff; text-decoration: underline dashed; padding: 0 2px; }
+  .stat-box { background: #f8f9ff; border-radius: 15px; padding: 15px; text-align: center; }
+  .stat-number { font-size: 28px; font-weight: 800; color: #5856d6; }
+</style>
+</head>
+<body>
+<!-- Botón Dashboard -->
+<a href="index.html" style="position:fixed;top:15px;left:15px;z-index:100;background:#1e1e2f;color:white;padding:8px 16px;border-radius:30px;text-decoration:none;font-weight:600;font-size:13px;">← Dashboard</a>
+
+<div class="audit-card">
+  <h4 class="fw-bold text-center">🔗 Task 3: Auditoría de Enlaces</h4>
+  <p class="text-muted text-center small mb-4">Análisis estructural y conteo dinámico de hipervínculos</p>
+
+  <!-- Contenido que se va a auditar -->
+  <div id="contenido-auditable">
+    <div class="text-center mb-3">
+      <a href="https://example.com" class="link-chip">🌐 Enlace Principal</a>
+    </div>
+    <p class="small mb-2"><b>Menú de Navegación:</b></p>
+    <div class="text-center mb-3">
+      <a href="#home" class="link-chip">Home</a>
+      <a href="#about" class="link-chip">About</a>
+      <a href="#links" class="link-chip">Links</a>
+      <a href="#contact" class="link-chip">Contact</a>
+    </div>
+    <div class="p-3 rounded-3" style="background:#f8f9fa;">
+      <p class="small m-0">Te muestro un párrafo de ejemplo con <a href="#">links</a>. Hay <a href="#">varios</a> links en esta <a href="#">página</a>. Puedes <a href="#">contarlos</a> todos?</p>
+    </div>
+    <div class="text-center mt-3">
+      <a href="https://google.com"><img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png" width="50" style="border:1px solid #eee; border-radius:10px; padding:5px;"></a>
+    </div>
+  </div>
+
+  <!-- Botón de acción -->
+  <button id="btn-analizar" class="btn btn-primary w-100 mt-4 fw-bold py-2" style="border-radius:12px;">📊 Analizar Enlaces de la Página</button>
+
+  <!-- Resultado PRO -->
+  <div id="resultado-auditoria" style="display:none;" class="mt-4">
+    <hr>
+    <div class="row g-2 mb-3">
+      <div class="col-4"><div class="stat-box"><div class="stat-number" id="total-links">0</div><div class="small text-muted">Total</div></div></div>
+      <div class="col-4"><div class="stat-box"><div class="stat-number" id="external-links" style="color:#ff3b30;">0</div><div class="small text-muted">Externos</div></div></div>
+      <div class="col-4"><div class="stat-box"><div class="stat-number" id="internal-links" style="color:#34c759;">0</div><div class="small text-muted">Internos</div></div></div>
+    </div>
+    <div id="lista-links" class="small p-3 rounded-3" style="background:#1e1e2f; color:#a0a0c0; font-family:monospace; max-height:150px; overflow-y:auto;"></div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("btn-analizar").addEventListener("click", () => {
+    const todosLosLinks = document.querySelectorAll("a");
+    const resultado = document.getElementById("resultado-auditoria");
+    
+    // Conteo dinámico real
+    let externos = 0, internos = 0;
+    let listaHTML = "";
+
+    todosLosLinks.forEach((link, index) => {
+      const href = link.getAttribute("href");
+      const esExterno = href.startsWith("http");
+      if(esExterno) externos++; else internos++;
+      
+      if(href !== "index.html") { // no contar el botón de dashboard
+         listaHTML += `> [${index}] ${href} - ${esExterno ? 'EXTERNO' : 'INTERNO'}<br>`;
+      }
+    });
+
+    // Actualizar números con animación
+    document.getElementById("total-links").textContent = todosLosLinks.length - 1;
+    document.getElementById("external-links").textContent = externos;
+    document.getElementById("internal-links").textContent = internos - 1;
+    document.getElementById("lista-links").innerHTML = listaHTML;
+
+    // Mostrar resultado
+    resultado.style.display = "block";
+
+    // Consola limpia para la rúbrica
+    console.clear();
+    console.log(`%cAuditoría Completada: ${todosLosLinks.length - 1} enlaces encontrados`, "color:#5856d6; font-weight:bold;");
+    console.table(Array.from(todosLosLinks).map(a => ({ texto: a.textContent.trim(), href: a.href })));
+  });
+</script>
+</body>
+</html>
+<script src="nav.js"></script>
